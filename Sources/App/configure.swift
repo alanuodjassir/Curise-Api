@@ -10,7 +10,7 @@ public func configure(_ app: Application) throws {
     //PostgeSQL Config
     app.databases.use(
     .postgres(hostname: "localhost",
-    username: "",
+    username: "alanoud",
     password: "",
     database: "cruisedb"),
     as: .psql)
