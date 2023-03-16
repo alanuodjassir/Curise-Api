@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+
+
+
+
+
+
+
+
+//nameOfEvent
+//locationOfEvent
+//Time_from _to..
+//cost
+//Offers
