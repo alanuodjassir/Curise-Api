@@ -31,7 +31,7 @@ struct CruiseActivityController: RouteCollection {
     }
     
     
-    // UPDATE - PUSH
+    // UPDATE - PUT
     func update(req: Request) throws -> EventLoopFuture<HTTPStatus> {
         let cruiseActivity = try req.content.decode(CruiseActivity.self)
         
