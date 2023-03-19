@@ -32,9 +32,3 @@ struct CruiseActivityTabel: Migration {
 }
 
 
-
-
-
-
-
-
