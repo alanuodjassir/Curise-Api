@@ -6,22 +6,33 @@
 //
 
 import Foundation
+import Fluent
+
+
+struct CruiseInfoTabel: Migration{
+    func prepare(on database: FluentKit.Database) -> NIOCore.EventLoopFuture<Void> {
+        return database.schema("CruiseInfoTabel")
+            .id()
+            .field("cruise_name", .string, .required)
+            .field("start_date", .string, .required)
+            .field("end_date", .string, .required)
+            .field("departure_port", .string, .required)
+            .field("destination_port", .string, .required)
+            .field("price", .string, .required)
+            .create()
+    }
+    
+    func revert(on database: FluentKit.Database) -> NIOCore.EventLoopFuture<Void> {
+        return database.schema("CruiseInfoTabel").delete()
+        
+        
+    }
+    
+    
+    
+    
+    
+}
 
 
 
-
-
-
-
-//1-id
-//2-image
-//3-name
-//4-#passenger_capacity
-//5-Restaurants
-//6-pool
-//7-Wheelchair_Accessible
-//8-Departure_date            تاريخ المغادره
-//9-arrival_date                              تاريخ الوصول
-//10-country_departure                   بلد المغادره
-//11- country_arrival                                بلد الوصول
-//12-trip_duration

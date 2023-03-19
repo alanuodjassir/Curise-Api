@@ -15,54 +15,62 @@ final class CruiseActivity: Model, Content{
     var id:UUID?
     
     
-    @Field(key:"nameOfEvent")
+    @Field(key:"name_of_event")
     
     
-    var nameOfEvent: String
+    var name_of_event: String
     
     
-    @Field(key:"locationOfEvent")
+    @Field(key:"destination")
     
-    var locationOfEvent: String
+    var destination: String
     
-    @Field(key:"Time_from_to")
+    @Field(key:"departure_date")
     
-    var Time_from_to : String
+    var departure_date : Date
     
     
-    @Field(key:"cost")
+    @Field(key:"activity_type")
     
-    var cost: String
+    var activity_type: String
     
-    @Field(key:"Offers")
+    @Field(key:"activity_start_time")
     
-    var Offers: String
+    var activity_start_time: String
+    
+    @Field(key:"activity_end_time")
+    
+    var activity_end_time: String
+    
+    
+    @Field(key:"activity_description")
+    
+    var activity_description: String
+ 
+  
     
     @Parent(key: "cruiseinfoID")
     var cruiseinfo: CruiseInfo
     
     init()  {}
     
-    
-    init(id: UUID? = nil, nameOfEvent: String, locationOfEvent: String, Time_from_to: String, cost: String, Offers: String) {
+    init(id: UUID? = nil, name_of_event: String, destination: String, departure_date: Date, activity_type: String, activity_start_time: String, activity_end_time: String, activity_description: String, cruiseinfo: CruiseInfo) {
         self.id = id
-        self.nameOfEvent = nameOfEvent
-        self.locationOfEvent = locationOfEvent
-        self.Time_from_to = Time_from_to
-        self.cost = cost
-        self.Offers = Offers
+        self.name_of_event = name_of_event
+        self.destination = destination
+        self.departure_date = departure_date
+        self.activity_type = activity_type
+        self.activity_start_time = activity_start_time
+        self.activity_end_time = activity_end_time
+        self.activity_description = activity_description
+        self.cruiseinfo = cruiseinfo
     }
     
+    
+    
+// (name_of_event, destination, departure_date, duration, price, activity_type, activity_start_time, activity_end_time, activity_description)
 }
 
 
-
-
-
-//nameOfEvent
-//locationOfEvent
-//Time_from _to..
-//cost
-//Offers
 
 

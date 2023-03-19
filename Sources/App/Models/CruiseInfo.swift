@@ -15,93 +15,69 @@ final class CruiseInfo: Model, Content{
     var id:UUID?
     
     
-    @Field(key:"name")
-    var name: String
+    @Field(key:"cruise_name")
+    var cruise_name: String
     
     
-    @Field(key:"passenger_capacity")
+    @Field(key:"start_date")
    
-    var passenger_capacity: Int
+    var start_date: Date
   
     
     
-    @Field(key:"Restaurants")
+    @Field(key:"end_date")
    
-    var Restaurants: Int
+    var end_date: Date
     
     
-    @Field(key:"Departure_date ")
+    @Field(key:"cruise_line ")
    
-    var Departure_date: Date
+    var cruise_line: String
     
     
     
-    @Field(key:"pool")
+    @Field(key:"departure_port")
    
-    var pool: Int
+    var departure_port: String
+  
     
-    
-    
-    @Field(key:"arrival_date")
+    @Field(key:"destination_port")
    
-    var arrival_date: Date
+    var destination_port: String
     
-    
-    @Field(key:"Wheelchair_Accessible")
+  
+    @Field(key:"price")
    
-    var Wheelchair_Accessible: String
+    var price: Int
+    
+    
 
     
-    @Field(key:"country_departure")
-   
-    var country_departure: String
-    
   
-    @Field(key:"country_arrival")
-   
-    var country_arrival: String
+  
     
     
-    
-    @Field(key:"trip_duration")
-   
-    var trip_duration: String
     
     @Children(for: \.$cruiseinfo)
     var CruiseActivity: [CruiseActivity]
     
     init(){}
     
-    init(id: UUID? = nil, name: String, passenger_capacity: Int, Restaurants: Int, Departure_date: Date, pool: Int, arrival_date: Date, Wheelchair_Accessible: String, country_departure: String, country_arrival: String, trip_duration: String) {
+    init(id: UUID? = nil, cruise_name: String, start_date: Date, end_date: Date, cruise_line: String, departure_port: String, destination_port: String, price: Int, CruiseActivity: [CruiseActivity]) {
         self.id = id
-        self.name = name
-        self.passenger_capacity = passenger_capacity
-        self.Restaurants = Restaurants
-        self.Departure_date = Departure_date
-        self.pool = pool
-        self.arrival_date = arrival_date
-        self.Wheelchair_Accessible = Wheelchair_Accessible
-        self.country_departure = country_departure
-        self.country_arrival = country_arrival
-        self.trip_duration = trip_duration
+        self.cruise_name = cruise_name
+        self.start_date = start_date
+        self.end_date = end_date
+        self.cruise_line = cruise_line
+        self.departure_port = departure_port
+        self.destination_port = destination_port
+        self.price = price
+        self.CruiseActivity = CruiseActivity
     }
    
     
 }
 
 
+// INfo (cruise_name, start_date, end_date, cruise_line, departure_port, destination_port, price)
 
-
-//1-id
-//2-image
-//3-name
-//4-#passenger_capacity
-//5-Restaurants
-//6-pool
-//7-Wheelchair_Accessible
-
-//8-Departure_date            تاريخ المغادره
-//9-arrival_date                              تاريخ الوصول
-//10-country_departure                   بلد المغادره
-//11- country_arrival                                بلد الوصول
-//12-trip_duration

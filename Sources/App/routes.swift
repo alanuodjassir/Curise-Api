@@ -12,3 +12,5 @@ func routes(_ app: Application) throws {
 
 //    try app.register(collection: TodoController())
 }
+//app.get("cruiseinfo") { req -> EventLoopFuture<[CruiseInfo]> in
+//    CruiseInfo.query(on: req.db).all()
