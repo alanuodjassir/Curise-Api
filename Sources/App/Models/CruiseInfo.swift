@@ -15,38 +15,38 @@ final class CruiseInfo: Model, Content{
     var id:UUID?
     
     
-    @Field(key:"cruise_name")
+    @Field(key: "cruise_name")
     var cruise_name: String
     
     
-    @Field(key:"start_date")
+    @Field(key: "start_date")
    
     var start_date: Date
   
     
     
-    @Field(key:"end_date")
+    @Field(key: "end_date")
    
     var end_date: Date
     
     
-    @Field(key:"cruise_line ")
+    @Field(key: "cruise_line ")
    
     var cruise_line: String
     
     
     
-    @Field(key:"departure_port")
+    @Field(key: "departure_port")
    
     var departure_port: String
   
     
-    @Field(key:"destination_port")
+    @Field(key: "destination_port")
    
     var destination_port: String
     
   
-    @Field(key:"price")
+    @Field(key: "price")
    
     var price: String
     

@@ -21,40 +21,40 @@ final class CruiseActivity: Model, Content{
     var name_of_event: String
     
     
-    @Field(key:"location")
+    @Field(key: "location")
     
-    var destination: String
+    var location: String
     
-    @Field(key:"date")
+    @Field(key: "date")
     
-    var departure_date : Date
+    var date : Date
     
     
-    @Field(key:"activity_type")
+    @Field(key: "activity_type")
     
     var activity_type: String
     
-    @Field(key:"activity_start_time")
+    @Field(key: "activity_start_time")
     
     var activity_start_time: String
     
-    @Field(key:"activity_end_time")
+    @Field(key: "activity_end_time")
     
     var activity_end_time: String
     
     
-    @Field(key:"activity_description")
+    @Field(key: "activity_description")
     
     var activity_description: String
  
     
-      @Field(key:"price")
+      @Field(key: "price")
      
       var price: String
       
       
     
-      @Field(key:"offers")
+      @Field(key: "offers")
      
       var offers: String
       
@@ -66,11 +66,11 @@ final class CruiseActivity: Model, Content{
     
     init(){}
    
-    init(id: UUID? = nil, name_of_event: String, destination: String, departure_date: Date, activity_type: String, activity_start_time: String, activity_end_time: String, activity_description: String, price: String, offers: String, cruiseinfoID: CruiseInfo.IDValue) {
+    init(id: UUID? = nil, name_of_event: String, location: String, date: Date, activity_type: String, activity_start_time: String, activity_end_time: String, activity_description: String, price: String, offers: String, cruiseinfoID: CruiseInfo.IDValue) {
         self.id = id
         self.name_of_event = name_of_event
-        self.destination = destination
-        self.departure_date = departure_date
+        self.location = location
+        self.date = date
         self.activity_type = activity_type
         self.activity_start_time = activity_start_time
         self.activity_end_time = activity_end_time
