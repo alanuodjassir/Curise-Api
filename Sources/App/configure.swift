@@ -17,11 +17,13 @@ public func configure(_ app: Application) throws {
         as: .psql)
     
     
-    //    app.migrations.add(CreateTodo())
+   app.migrations.add(CruiseInfoTabel())
+    app.migrations.add(CruiseActivityTabel())
     
     // register routes
     try routes(app)
     
+    try app.autoMigrate().wait()
     
     
 }

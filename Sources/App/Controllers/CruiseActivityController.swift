@@ -38,13 +38,13 @@ struct CruiseActivityController: RouteCollection {
         return CruiseActivity.find(cruiseActivity.id, on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap {
-                $0.nameOfEvent = cruiseActivity.nameOfEvent
-                $0.locationOfEvent = cruiseActivity.locationOfEvent
-                $0.Time_from_to = cruiseActivity.Time_from_to
-                $0.cost = cruiseActivity.cost
-                $0.Offers = cruiseActivity.Offers
+                $0.activity_description = cruiseActivity.activity_description
+                $0.price = cruiseActivity.price
+                $0.offers = cruiseActivity.offers
                 return $0.update(on: req.db).transform(to: .ok)
             }
+        
+     
     }
     
     // DELETE - DELETE

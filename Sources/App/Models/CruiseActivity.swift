@@ -47,14 +47,26 @@ final class CruiseActivity: Model, Content{
     
     var activity_description: String
  
-  
+    
+      @Field(key:"price")
+     
+      var price: Int
+      
+      
+    
+      @Field(key:"offers")
+     
+      var offers: String
+      
+      
+
     
     @Parent(key: "cruiseinfoID")
     var cruiseinfo: CruiseInfo
     
-    init()  {}
-    
-    init(id: UUID? = nil, name_of_event: String, destination: String, departure_date: Date, activity_type: String, activity_start_time: String, activity_end_time: String, activity_description: String, cruiseinfo: CruiseInfo) {
+    init(){}
+   
+    init(id: UUID? = nil, name_of_event: String, destination: String, departure_date: Date, activity_type: String, activity_start_time: String, activity_end_time: String, activity_description: String, price: Int, offers: String, cruiseinfoID: CruiseInfo.IDValue) {
         self.id = id
         self.name_of_event = name_of_event
         self.destination = destination
@@ -63,9 +75,10 @@ final class CruiseActivity: Model, Content{
         self.activity_start_time = activity_start_time
         self.activity_end_time = activity_end_time
         self.activity_description = activity_description
-        self.cruiseinfo = cruiseinfo
+        self.price = price
+        self.offers = offers
+        self.$cruiseinfo.id = cruiseinfoID
     }
-    
     
     
 // (name_of_event, destination, departure_date, duration, price, activity_type, activity_start_time, activity_end_time, activity_description)

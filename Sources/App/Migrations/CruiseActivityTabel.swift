@@ -12,7 +12,7 @@ struct CruiseActivityTabel: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         database.schema("CruiseActivityTabel")
                .id()
-               .field("nameOfEvent", .string, .required)
+               .field("name_of_event", .string, .required)
                .field("destination", .string, .required)
                .field("departure_date", .string, .required)
                .field("duration", .string, .required)
