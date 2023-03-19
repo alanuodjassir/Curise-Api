@@ -48,7 +48,7 @@ final class CruiseInfo: Model, Content{
   
     @Field(key:"price")
    
-    var price: Int
+    var price: String
     
     
 
@@ -63,7 +63,7 @@ final class CruiseInfo: Model, Content{
     
     init(){}
     
-    init(id: UUID? = nil, cruise_name: String, start_date: Date, end_date: Date, cruise_line: String, departure_port: String, destination_port: String, price: Int, CruiseActivity: [CruiseActivity]) {
+    init(id: UUID? = nil, cruise_name: String, start_date: Date, end_date: Date, cruise_line: String, departure_port: String, destination_port: String, price: String, CruiseActivity: [CruiseActivity]) {
         self.id = id
         self.cruise_name = cruise_name
         self.start_date = start_date

@@ -18,6 +18,7 @@ struct CruiseInfoTabel: Migration{
             .field("end_date", .string, .required)
             .field("departure_port", .string, .required)
             .field("destination_port", .string, .required)
+            .field("cruise_line", .string, .required)
             .field("price", .string, .required)
             .create()
     }

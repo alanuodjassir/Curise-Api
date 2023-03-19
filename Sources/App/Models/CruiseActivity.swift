@@ -21,11 +21,11 @@ final class CruiseActivity: Model, Content{
     var name_of_event: String
     
     
-    @Field(key:"destination")
+    @Field(key:"location")
     
     var destination: String
     
-    @Field(key:"departure_date")
+    @Field(key:"date")
     
     var departure_date : Date
     
@@ -50,7 +50,7 @@ final class CruiseActivity: Model, Content{
     
       @Field(key:"price")
      
-      var price: Int
+      var price: String
       
       
     
@@ -66,7 +66,7 @@ final class CruiseActivity: Model, Content{
     
     init(){}
    
-    init(id: UUID? = nil, name_of_event: String, destination: String, departure_date: Date, activity_type: String, activity_start_time: String, activity_end_time: String, activity_description: String, price: Int, offers: String, cruiseinfoID: CruiseInfo.IDValue) {
+    init(id: UUID? = nil, name_of_event: String, destination: String, departure_date: Date, activity_type: String, activity_start_time: String, activity_end_time: String, activity_description: String, price: String, offers: String, cruiseinfoID: CruiseInfo.IDValue) {
         self.id = id
         self.name_of_event = name_of_event
         self.destination = destination
