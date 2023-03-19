@@ -33,7 +33,7 @@ func index(req: Request) async throws -> [CruiseInfo] {
     
 }
 
-
+//no update is needed for the cruiseInfo data
 //DELETE
 func delete(req: Request) async throws -> HTTPStatus {
     guard let cruiseDetails = try await CruiseInfo.find(req.parameters.get("cruiseinfoID"), on: req.db) else {

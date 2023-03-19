@@ -10,11 +10,11 @@ func routes(_ app: Application) throws {
         "Hello, world!"
     }
 
-    
+    try app.register(collection: CruiseInfoController())
     try app.register(collection: CruiseActivityController())
-    
-    
+ 
     
 }
+
 //app.get("cruiseinfo") { req -> EventLoopFuture<[CruiseInfo]> in
 //    CruiseInfo.query(on: req.db).all()
