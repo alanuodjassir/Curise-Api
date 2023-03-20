@@ -12,7 +12,7 @@ import Fluent
 
 struct CruiseActivityTabel: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
-        database.schema("CruiseActivityTabel")
+        database.schema("cruiseactivity")
                .id()
                .field("name_of_event", .string, .required)
                .field("location", .string, .required)
@@ -23,12 +23,12 @@ struct CruiseActivityTabel: Migration {
                .field("activity_description", .string, .required)
                .field("price", .string, .required)
                .field("offers", .string, .required)
-
+               .field("cruiseinfoID", .uuid, .required, .references("cruiseinfo", "id"))
                .create()
     }
     
     func revert(on database: Database) -> EventLoopFuture<Void> {
-        database.schema("CruiseActivityTabelv").delete()
+        database.schema("cruiseactivity").delete()
     }
 }
 
