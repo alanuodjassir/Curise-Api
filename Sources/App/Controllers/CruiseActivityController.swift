@@ -13,8 +13,10 @@ struct CruiseActivityController: RouteCollection {
         let cruiseActivity = routes.grouped("cruiseactivity")
         cruiseActivity.get(use: index)
         cruiseActivity.post(use: create)
+        cruiseActivity.post(":cruiseactivityID", use: update)
         cruiseActivity.group(":cruiseactivityID") { todo in
             cruiseActivity.delete(use: delete)
+           
         }
     }
 
@@ -32,19 +34,17 @@ struct CruiseActivityController: RouteCollection {
     
     
     // UPDATE - PUT
-    func update(req: Request) throws -> EventLoopFuture<HTTPStatus> {
-        let cruiseActivity = try req.content.decode(CruiseActivity.self)
+    func update(req: Request) async throws -> CruiseActivity {
+        let newCruiseActivity = try req.content.decode(CruiseActivity.self)
+        guard let cruiseActivity = try await CruiseActivity.find(req.parameters.get("cruiseactivityID"), on: req.db) else{
+           throw Abort(.notFound)
+        }
+        cruiseActivity.activity_description = newCruiseActivity.activity_description
+        cruiseActivity.price = newCruiseActivity.price
+        cruiseActivity.offers = newCruiseActivity.offers
+        try await cruiseActivity.save(on: req.db)
+        return newCruiseActivity
         
-        return CruiseActivity.find(cruiseActivity.id, on: req.db)
-            .unwrap(or: Abort(.notFound))
-            .flatMap {
-                $0.activity_description = cruiseActivity.activity_description
-                $0.price = cruiseActivity.price
-                $0.offers = cruiseActivity.offers
-                return $0.update(on: req.db).transform(to: .ok)
-            }
-        
-     
     }
     
     // DELETE - DELETE
