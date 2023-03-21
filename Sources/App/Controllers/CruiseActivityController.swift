@@ -43,6 +43,7 @@ struct CruiseActivityController: RouteCollection {
         
     }
     
+    
     // DELETE - DELETE
     func delete(req: Request) async throws -> HTTPStatus {
         guard let cruiseActivity = try await CruiseActivity.find(req.parameters.get("cruiseactivityID"), on: req.db) else {

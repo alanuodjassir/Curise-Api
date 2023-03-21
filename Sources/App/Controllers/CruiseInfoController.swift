@@ -50,6 +50,7 @@ func update(req: Request) async throws -> CruiseInfo {
     
 }
 
+
 //no update is needed for the cruiseInfo data
 //DELETE
 func delete(req: Request) async throws -> HTTPStatus {
