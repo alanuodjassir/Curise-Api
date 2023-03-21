@@ -15,6 +15,8 @@ struct CruiseInfoController: RouteCollection {
         cruiseDetails.get(use: index)
         cruiseDetails.post(use: create)
         cruiseDetails.delete(use: delete)
+        cruiseDetails.get(":cruiseinfoID", "cruiseactivity", use: getCruisActivity)
+
     }
 }
 
@@ -42,3 +44,9 @@ func delete(req: Request) async throws -> HTTPStatus {
     try await cruiseDetails.delete(on: req.db)
     return .noContent
     }
+
+func getCruisActivity(_ req: Request) throws -> EventLoopFuture<[CruiseActivity]> {
+    CruiseInfo.find(req.parameters.get("cruiseinfoID"), on: req.db).unwrap(or: Abort(.notFound)).flatMap { cruise in
+        cruise.$CruiseActivity.get(on: req.db)
+    }
+}
