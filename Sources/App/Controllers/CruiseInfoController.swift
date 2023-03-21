@@ -19,6 +19,8 @@ struct CruiseInfoController: RouteCollection {
         cruiseDetails.get(":cruiseinfoID", "cruiseactivity", use: getCruisActivity)
 
     }
+    
+    
 }
 
 //CRUD in order

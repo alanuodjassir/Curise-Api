@@ -18,6 +18,7 @@ struct CruiseActivityController: RouteCollection {
         
     }
 
+    
     // READ - GET
     func index(req: Request) async throws -> [CruiseActivity] {
         try await CruiseActivity.query(on: req.db).all()
