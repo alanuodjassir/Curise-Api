@@ -14,10 +14,8 @@ struct CruiseActivityController: RouteCollection {
         cruiseActivity.get(use: index)
         cruiseActivity.post(use: create)
         cruiseActivity.post(":cruiseactivityID", use: update)
-        cruiseActivity.group(":cruiseactivityID") { todo in
-            cruiseActivity.delete(use: delete)
-           
-        }
+        cruiseActivity.delete(":cruiseactivityID", use: delete)
+        
     }
 
     // READ - GET
