@@ -13,7 +13,7 @@ struct CruiseActivityController: RouteCollection {
         let cruiseActivity = routes.grouped("cruiseactivity")
         cruiseActivity.get(use: index)
         cruiseActivity.post(use: create)
-        cruiseActivity.post(":cruiseactivityID", use: update)
+        cruiseActivity.put(use: update)
         cruiseActivity.delete(":cruiseactivityID", use: delete)
         
     }
@@ -37,10 +37,7 @@ struct CruiseActivityController: RouteCollection {
         guard let cruiseActivity = try await CruiseActivity.find(req.parameters.get("cruiseactivityID"), on: req.db) else{
            throw Abort(.notFound)
         }
-        cruiseActivity.activity_description = newCruiseActivity.activity_description
-        cruiseActivity.price = newCruiseActivity.price
-        cruiseActivity.offers = newCruiseActivity.offers
-        try await cruiseActivity.save(on: req.db)
+        try await cruiseActivity.update(on: req.db)
         return newCruiseActivity
         
     }

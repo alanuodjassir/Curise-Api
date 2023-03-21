@@ -15,6 +15,7 @@ struct CruiseInfoController: RouteCollection {
         cruiseDetails.get(use: index)
         cruiseDetails.post(use: create)
         cruiseDetails.delete(use: delete)
+        cruiseDetails.put( use: update)
         cruiseDetails.get(":cruiseinfoID", "cruiseactivity", use: getCruisActivity)
 
     }
@@ -35,6 +36,18 @@ func index(req: Request) async throws -> [CruiseInfo] {
     
 }
 
+
+// UPDATE - PUT
+func update(req: Request) async throws -> CruiseInfo {
+    let newCruiseInfo = try req.content.decode(CruiseInfo.self)
+    guard let cruiseInfo = try await CruiseInfo.find(req.parameters.get("cruiseinfoID"), on: req.db) else{
+       throw Abort(.notFound)
+    }
+    try await cruiseInfo.update(on: req.db)
+    return newCruiseInfo
+    
+}
+
 //no update is needed for the cruiseInfo data
 //DELETE
 func delete(req: Request) async throws -> HTTPStatus {
@@ -50,3 +63,4 @@ func getCruisActivity(_ req: Request) throws -> EventLoopFuture<[CruiseActivity]
         cruise.$CruiseActivity.get(on: req.db)
     }
 }
+
