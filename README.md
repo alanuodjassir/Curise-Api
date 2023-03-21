@@ -10,7 +10,8 @@ This API is designed to provide a user-friendly and intuitive way for developers
 | GET          | cruiseinfo/{cruiseinfoID}/cruiseactivity | get cruise activity for particular cruise |
 | POST         | cruiseinfo/                | create a new cruise information |
 | POST         | {cruiseinfoID}/cruiseactivity | create a new cruise Activity |
-| PUT          | cruiseinfo/{cruiseinfoID}  | update an existing cruise information |
+| PUT          | cruiseinfo | update an existing cruise information |
+| PUT          | cruiseactivity  | update an existing cruise Activity |
 | DELETE       | cruiseinfo/{cruiseinfoID}  | delete an existing cruise information |
 | DELETE       | {cruiseinfoID}/cruiseactivity  |delete an existing cruise activity |
 
