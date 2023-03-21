@@ -4,16 +4,16 @@ This API is designed to provide a user-friendly and intuitive way for developers
 
 
 # HTTP Methods
-| Http Methods |           Route            | Right-aligned |
+| Http Methods |           Route            | Description |
 | :---         |     :---:                  |          ---: |
-| GET          | cruiseinfo/                | get cruise information |
-| GET          | cruiseinfo/{cruiseinfoID}/cruiseactivity | get cruise activity for particular cruise |
-| POST         | cruiseinfo/                | create a new cruise information |
-| POST         | {cruiseinfoID}/cruiseactivity | create a new cruise Activity |
-| PUT          | cruiseinfo | update an existing cruise information |
-| PUT          | cruiseactivity  | update an existing cruise Activity |
-| DELETE       | cruiseinfo/{cruiseinfoID}  | delete an existing cruise information |
-| DELETE       | {cruiseinfoID}/cruiseactivity  |delete an existing cruise activity |
+| GET          | /cruiseinfo                | get cruise information |
+| GET          | cruiseinfo/:cruiseinfoID/cruiseactivity | get cruise activity for particular cruise |
+| POST         | /cruiseinfo                | create a new cruise information |
+| POST         | /cruiseactivity | create a new cruise Activity |
+| PUT          | /cruiseinfo | update an existing cruise information |
+| PUT          | /cruiseactivity  | update an existing cruise Activity |
+| DELETE       | /cruiseinfo/:cruiseinfoID  | delete an existing cruise information |
+| DELETE       | /cruiseactivity/:cruiseinfoID  |delete an existing cruise activity |
 
 
 # Response Format
