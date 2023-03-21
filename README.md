@@ -2,7 +2,13 @@
 
 
 
-| Http Method | Route | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
+
+| Http Methods |           Route            | Right-aligned |
+| :---         |     :---:                  |          ---: |
+| GET          | cruiseinfo/                | get cruise information |
+| GET          | cruiseinfo/{cruiseinfoID}/cruiseactivity | get cruise activity for particular cruise |
+| POST         | cruiseinfo/                | create a new cruise information |
+| PUT          | cruiseinfo/{cruiseinfoID}  | update a cruise information |
+| DELETE       | cruiseinfo/{cruiseinfoID}  | delete a cruise |
+
+
