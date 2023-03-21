@@ -7,7 +7,7 @@ This API is designed to provide a user-friendly and intuitive way for developers
 | Http Methods |           Route            | Description |
 | :---         |     :---:                  |          ---: |
 | GET          | /cruiseinfo                | get cruise information |
-| GET          | cruiseinfo/:cruiseinfoID/cruiseactivity | get cruise activity for particular cruise |
+| GET          | /cruiseinfo/:cruiseinfoID/cruiseactivity | get cruise activity for particular cruise |
 | POST         | /cruiseinfo                | create a new cruise information |
 | POST         | /cruiseactivity | create a new cruise Activity |
 | PUT          | /cruiseinfo | update an existing cruise information |
