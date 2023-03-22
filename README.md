@@ -36,7 +36,7 @@ https://cruise.herokuapp.com/cruiseinfo
  ## cruiseactivity
  https://cruise.herokuapp.com/cruiseactivity
  ```json
-  {
+   {
         "price": "100 Sr",
         "activity_end_time": "2023-12-13T00:00:00Z",
         "offers": "20%  for families",
