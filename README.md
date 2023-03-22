@@ -20,16 +20,15 @@ This API is designed to provide a user-friendly and intuitive way for developers
 ## cruiseinfo
 https://cruise.herokuapp.com/cruiseinfo
 ```json
-
-  {
+ {
         "destination_port": "red-sea-jeddah",
-        "end_date": "2023-04-06T00:00:00Z",
+        "end_date": "2023-12-12T00:00:00Z",
         "departure_port": "red-sea-jeddah",
-        "cruise_line": "Jeddah, KSA(Day 1)->Yanbu, KSA(Day 2)-> Day at Sea(Day 3)->Sokhna Port, Egypt(Day 4)->Safaga, Egypt(Day 5)->Aqaba(petra), Jordan(Day 6)-> Day at Sea(Day 7)-> Jeddah, KSA(Day 8)",
-        "cruise_name": "SHIP: MSC SPLENDIDA",
-        "price": "1500 Sr room/per day",
-        "id": "BD647744-70B0-4AF5-A1FB-747C10CC44CA",
-        "start_date": "2023-03-29T00:00:00Z"
+        "cruise_line": "Jeddah,KSA(Day 1)-> Day at sea(Day 2) ->Aqaba(petra),Jordan(Day 3)->Sharm El-Shekih,Egypt(Day 4)->Sokhna Port,Egypt(Day 5)->Safage,Egypt(Day 6)-> Day at Sea(Day 7)-> Jeddah,KSA(Day 8 )",
+        "cruise_name": "SHIP: MSC ORCHESTRA",
+        "price": "1662 Sr room/per day",
+        "id": "19010CEE-3396-4D11-84AD-98C558A6B3FB",
+        "start_date": "2023-12-05T00:00:00Z"
     }
     
  ```
