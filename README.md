@@ -17,6 +17,7 @@ This API is designed to provide a user-friendly and intuitive way for developers
 
 
 ## cruiseinfo
+https://cruise.herokuapp.com/cruiseinfo
 ```json
 
   {
@@ -32,6 +33,7 @@ This API is designed to provide a user-friendly and intuitive way for developers
     
  ```
  ## cruiseactivity
+ https://cruise.herokuapp.com/cruiseactivity
  ```json
   {
         "price": "100 Sr",
